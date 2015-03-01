@@ -6,7 +6,7 @@ import os
 import codecs
 import sys
 
-extensions_list_file = 'ExtensionsList.txt'
+extensions_list_file = 'ExtensionsList1.txt'
 predefined_extensions_names = ['1)  Таверны и Соборы',
                                '2)  Купцы и Строители',
                                '3)  Король (и Атаман)',
@@ -62,14 +62,13 @@ def get_extensions_list_from_file(file_name):
                     if ord(line[0]) == 65279:
                         line = line[1:]
                     clean_list.append(line)
-        # print unichr(65279)   # this char appears in the beginning of .txt file
         return clean_list
 
 
 def print_count_error_message(count, list_size):
     output_string = 'You want {} extentions from list of {}. \nIt is impossible :-( ' \
                     '\nChoose number between 1 and {}, please.'.format(count, list_size, list_size)
-    print output_string
+    print(unicode(output_string))
 
 if __name__ == '__main__':
     if len(sys.argv) == 1:
@@ -80,10 +79,3 @@ if __name__ == '__main__':
             gen(int(sys.argv[1]))
         except ValueError:
             print 'Your first argument should be integer'
-
-    # elif len(sys.argv) == 3:
-    #     print '3 args ', sys.argv[1]
-    #     try:
-    #         gen(sys.argv[1], sys.argv[2])
-    #     except ValueError:
-    #         print 'Your first argument should be integer'
