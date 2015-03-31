@@ -11,7 +11,7 @@ import sys
     [3] length of name (to nice output, because og cyrillic issue)
     [4] -1 if base square numbers should be decreased
 '''
-predefined_extensions = [('1)  Таверны и Соборы', 18, 'Big followers', 16, 0),
+predefined_extensions = [('1)  \'Таверны и Соборы\'', 18, 'Big followers', 16, 0),
                          ('2)  \'Купцы и Строители\'', 24, 'Pigs, Builders, Goods tokens', 17, 0),
                          ('3)  \'Король (и Атаман)\'', 5, 'King and Chieftain tokens', 17, 0),
                          ('4)  \'Принцесса и Дракон\'', 30, 'Fairy and Dragon', 18, 0),
@@ -26,10 +26,12 @@ predefined_extensions = [('1)  Таверны и Соборы', 18, 'Big followe
                          ('13) \'Гонцы\'', 0, 'Messengers, 8 messages', 5, 0),
                          ('14) \'Грабители\'', 8, 'Robbers', 9, 0),
                          ('15) \'Паромы\'', 8, '8 ferry-tokens', 6, 0),
-                         ('16) \'Золотые рудники\'', 8, '16 golden-tokens', 15, 0)]
+                         ('16) \'Золотые рудники\'', 8, '16 golden-tokens', 15, 0),
+                         ('17) \'Колесо Фортуныэ\'', 88, 'Pink Pig, tablet, 72 special base squares', 15, 0),
+                         ('18) \'Мосты, замки и базары\'', 12, 'Bridges and Castles', 21, 0)]
 
 
-def gen(including_extensions_count=5):
+def gen(including_extensions_count=18):
     extensions_list_length = len(predefined_extensions)
 
     if including_extensions_count in range(1, extensions_list_length+1):
